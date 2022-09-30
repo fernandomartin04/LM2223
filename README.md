@@ -5,3 +5,4 @@ del módulo lenguaje de marcas. Entre otros:
 - Ejercicios HTML
 - Ejercicios CSS
 - Ejercicios JS
+- Ejercicios de JQuery
