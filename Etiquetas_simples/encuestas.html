@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        input {
+  margin-left: 20px;
+}
+</style>
+    <fieldset>
+        <legend><h3>Datos personales</h3></legend>
+    <form action="." oninput="range_control_value.value = range_control.valueAsNumber">
+        <p>
+        <li>Nombre: <input type="text" name="name_control" placeholder="Nombre" autofocus required/></li>
+        <br/>
+        <li>Apellidos: <input type="text" name="surname_control" placeholder="Apellidos" autofocus required/></li>
+        <br/>
+        <li>Nombre de usuario: <input type="text" name="user_control" placeholder="Usuario"></li>
+        <li>Sexo: </li><br>
+        <input type="radio" id="Hombre" name="Sexo" value="HTML">
+        <label for="Hombre">Hombre</label>
+        <br>
+        <input type="radio" id="Mujer" name="Sexo" value="HTML">
+        <label for="Mujer">Mujer</label>
+        <br>
+        <input type="radio" id="Otros" name="Sexo" value="HTML">
+        <label for="Otros">Otros</label>
+        <br><br>
+        <li>Correo Electrónico: <input type="email" name="email_control" placeholder="Correo" required/></li>
+        <br/>
+        <li>Fecha de nacimiento: <input type="date" name="date_control"/></li>
+        <br/>
+        <li>Hora de dispoibilidad para citas: <input type="time" name="time_control"/></li>
+        <br/>
+        <li>Edad: <input type="number" name="number_control" min="18" max="99" value="0"/></li>
+        <br>
+        <li>Teléfono: <input type="tel" placeholder="Nº Teléfono" name="tel_control"/></li>
+        <br/>
+        <li>Color Favorito: <input type="color" name="color_control"/></li>
+        <br/>
+        <input type="submit" value="Submit!"/>
+        </p>
+    </fieldset>
+</body>
+</html>
