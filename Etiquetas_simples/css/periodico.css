@@ -1,0 +1,78 @@
+img {
+    height: 75px;
+    width: 1210px;
+    size-adjust: 50%;
+    border:5px solid black;
+    position: fixed;
+    top: 40px ; 
+    justify-content: center;
+}
+#cuadro1 {
+    width: 400px;
+    height: 500px;
+    background-color: orange;
+    position: relative;
+    margin-top: 130px;
+    margin-left: 20px;
+    opacity: 0.7;
+    word-wrap: break-word
+}
+#cuadro2 {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(255, 8, 0);
+    position: relative;
+    margin-top: 30px;
+    margin-left: 20px;
+    opacity: 0.7;
+    word-wrap: break-word
+}
+#cuadro3 {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(17, 140, 255);
+    position: absolute;
+    margin-top: -1030px;
+    margin-left: 430px;
+    opacity: 0.7;
+    word-wrap: break-word
+}
+#cuadro4 {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(90, 223, 13);
+    position: absolute;
+    margin-top: -500px;
+    margin-left: 430px;
+    opacity: 0.7;
+    word-wrap: break-word
+}
+#cuadro5 {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(231, 19, 150);
+    position: absolute;
+    margin-top: -1030px;
+    margin-left: 840px;
+    opacity: 0.7;
+    word-wrap: break-word
+}
+#cuadro6 {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(17, 255, 223);
+    position: absolute;
+    margin-top: -500px;
+    margin-left: 840px;
+    opacity: 0.7;
+    word-wrap: break-word
+}
+#titulo {
+    margin-left: 20px;
+}
+body {
+    background-image: url("https://e00-marca.uecdn.es/assets/v29/img/destacadas/marca__logo-generica.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
