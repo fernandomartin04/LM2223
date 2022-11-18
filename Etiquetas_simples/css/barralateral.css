@@ -1,0 +1,43 @@
+body {
+    background-color:#e2db71;
+      font-family: Courier New, Monaco, Consolas;
+       
+      }
+      .general {margin-left: 4px;}
+      .cajagrande {overflow: auto;}
+      .apartados {
+        text-align:center;
+        background: #15dfee;
+        border-radius: 3px;
+        list-style-type: none;
+        margin: 3px;
+        height: 45px;
+        line-height:45px;
+        vertical-align:center;
+        border: 1px solid #ffffff;
+        padding: 1px;
+      }
+      .cajabarra {
+        width: auto;
+        float: none;  
+      }
+      
+      .lista {
+        padding: 0;
+        margin: 0;
+      }
+      
+      @media screen and (min-width: 480px) {
+        .cajabarra {width: 195px; float: right;}
+        .general {margin-right: 200px;}
+      }
+      @media print {
+          body {
+              background-color: #fff;
+              font-family: 'Times New Roman', Times, serif;
+          }
+          .cajabarra {
+              display:none;
+          }
+      }
+      
