@@ -1,35 +1,44 @@
 img {
     width: 100%;
 }
+  /* Título */
+.titulo {
+  text-align: center;
+  padding: 50px;
+}
 .todo {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 4px;
+    padding: 0 3px;
+    justify-content: center;
 }
 
 .column {
     flex: 25%;
-    max-width: 25%;
+    max-width: 23%;
     padding: 0 4px;
+    
   }
-  
+
   .column img {
     margin-top: 8px;
     vertical-align: middle;
   }
   
-  /* Responsive layout - makes a two column-layout instead of four columns */
+  /* Esto hace que cuando el dispositivo sea de 800 px o menos haya 2 columnas de imágenes en lugar de 3 */
   @media (max-width: 800px) {
     .column {
       flex: 50%;
-      max-width: 50%;
+      max-width: 48%;
     }
   }
   
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  /* Esto hace que cuando el dispositivo sea de 600 px o menos haya 1 columna de imágenes en lugar de 2 */
   @media (max-width: 600px) {
     .column {
       flex: 100%;
       max-width: 100%;
     }
   }
+
+
