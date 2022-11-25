@@ -1,3 +1,8 @@
+body {
+  background-image: url("https://media.istockphoto.com/id/817026938/es/foto/sevilla-espa%C3%B1a-el-r%C3%ADo-guadalquivir-y-torre-del-oro.jpg?s=612x612&w=0&k=20&c=CfI1_fMtreAnWbJdcJZT0mTRTc4NtzmiU4pH05rKHog=");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 img {
     width: 100%;
 }
