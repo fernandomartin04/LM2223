@@ -1,0 +1,39 @@
+
+/* Diferentes tamaños de las media queries */
+@media screen and (max-width: 480px) {
+    body {
+        background-color: lightgreen;
+    }
+    .smartphone {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    
+    body {
+        background-color: chartreuse;
+    }
+    .tablet {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+    body {
+        background-color: darkorange;
+    }
+    .laptop {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    body {
+        background-color: yellow;
+    }
+    .monitor{
+        display: block;
+    }
+}
+
