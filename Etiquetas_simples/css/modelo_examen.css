@@ -1,0 +1,77 @@
+body {
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.titulo {
+    text-align: center;
+    background-color:#b28306;
+    height: 120px;
+    width: 1000px;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 40px;
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+}
+.botoncitos {
+    border-radius: 20px;
+    background-color: #4c3803;
+    display: inline;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #b28306;
+    display: flex;
+}
+.bajo_titulo {
+    margin: 0 auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebcd7c;
+    width: 980px;
+    border-radius: 20px;
+}
+
+.texto1 {
+    width: 65%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    justify-content: center;
+    align-items: center;
+    float: left; 
+    overflow: auto;
+    margin-left: 10% ;
+    font-size: smaller;
+
+}
+.texto2 {
+    width: 15%;
+    margin-right: 10%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left; 
+    overflow: auto;
+    background-color: #b28306;
+    border-radius: 20px;
+    font-size: smaller;
+    
+}
+
