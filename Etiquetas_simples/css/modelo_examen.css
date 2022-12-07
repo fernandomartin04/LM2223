@@ -101,32 +101,33 @@ a {
 
 /* Media queries tamaño móvil */
 @media screen and (max-width: 480px) {
-    div {
-        flex: 100%;
-        max-width: 100%;
-    }
     .titulo {
         order: 1;
-        flex-direction: column;
     }
     .texto1 {
         order: 2;
-        flex-direction: column;
+        width: auto;
     }
     .texto2 {
         order: 3;
-        flex-direction: column;
+        width: auto; 
+         
     }
     .bajo_titulo {
-        order: 4;
-        flex-direction: column;
+        order: 4; 
     }
     .pie {
-        order: 4;
-        flex-direction: column;
+        order: 5; 
+        width: auto;
     }
     .negro {
         display: none;
+    }
+    .mq {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
     }
 }
 
