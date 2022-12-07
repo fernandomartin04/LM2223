@@ -1,0 +1,8 @@
+body {
+    font-family: ;
+}
+.padre {
+    background-color: lightgrey;
+    display: grid;
+    grid-template-columns: 50%;
+}
