@@ -1,8 +1,26 @@
-body {
-    font-family: ;
-}
 .padre {
-    background-color: lightgrey;
     display: grid;
-    grid-template-columns: 50%;
+    grid-template-columns: 20% 80%;
+    padding: 60px;
+    background-color: red;
+}
+.hijos {
+    text-align: center;
+    background-color: blue;
+    padding: auto;
+    border: 2px solid black;
+    padding: 10px;
+}
+.puntos_debiles{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: green;
+    padding-bottom: 15%;
+}
+body {
+    background-color: yellow;
+}
+.p_titulo {
+    margin-top: 20px;
+    margin-left: 20px;
 }
