@@ -37,3 +37,8 @@
     }
 }
 
+
+/* Varias cosas útiles */
+.aside {
+    float: right; /* Con esto flota a la derecha del texto */
+}   
