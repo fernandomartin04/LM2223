@@ -1,26 +1,114 @@
-.padre {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+    background-color: lightgray;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+h1{
+    margin: 3% 10%;
+}
+
+.contenedor {
+    background-color: white;
+    border: 1px solid black; 
+    margin: 0% 10%;
+    height: auto;
+    width: auto;
+}
+
+p {
+    margin-top: auto;
+    margin-left: 10px;
+}
+
+.contenedor_grid {
     display: grid;
     grid-template-columns: 20% 80%;
-    padding: 60px;
-    background-color: red;
+    row-gap: 1em;
+    column-gap: 20%;
 }
-.hijos {
-    text-align: center;
-    background-color: blue;
-    padding: auto;
-    border: 2px solid black;
-    padding: 10px;
+
+.item{
+    margin-left: 10px;
 }
-.puntos_debiles{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    background-color: green;
-    padding-bottom: 15%;
+
+/* Estilo del input */
+
+input[type="text"]{
+    height: 25px;
+    width: 70%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: bold;
 }
-body {
-    background-color: yellow;
+
+input[type="checkbox"]{
+    height: 22px;
+    width: 22px;
 }
-.p_titulo {
-    margin-top: 20px;
-    margin-left: 20px;
+
+.item-3{
+    width: 150%;
+}
+
+input[type="email"]{
+    height: 25px;
+    width: 70%;
+}
+
+input[type="date"]{
+    height: 30px;
+    width: 71%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+input[type="file"]{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+input[type="submit"]{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: bold;
+    height: 35px;
+    width: 200%;
+    margin-bottom: 10px;
+}
+
+select{
+    height: 30px;
+    width: 71%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+.item-15{
+    grid-column: 1/span 2;
+}
+
+.item-16{
+    grid-column: 1/span 2;
+}
+
+textarea {
+    width: 82%;
+    height: 350px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: bold;
 }

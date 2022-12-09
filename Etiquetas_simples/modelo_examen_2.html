@@ -4,31 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EJ 2</title>
     <link rel="stylesheet" href="css/modelo_examen_ej2.css">
+    <title>EJERCICIO 2</title>
 </head>
 <body>
-    <p class="p_titulo">CREA TU PERSONAJE</p>
-    <div class="padre">
-        <div class="hijos">1</div>
-        <div class="hijos">2</div>
-        <div class="hijos">3</div>
-        <div class="hijos">4</div>
-        <div class="hijos">5</div>
-        <div class="hijos">6</div>
-        <div class="hijos">7</div>
-        <div class="hijos">8</div>
-        <div class="hijos">9</div>
-        <div class="hijos">10</div>
-        <div class="hijos">11</div>
-        <div class="hijos">12</div>
-        <div class="hijos">13</div>
-        <div class="hijos">14</div>
-        <div class="hijos">15</div>
-        <div class="hijos">16</div>
-        <div class="hijos">17</div>
-        <div class="hijos">18</div>
-        <div class="puntos_debiles">SOY PUNTO DEBIL</div>
+    <h1>Crea tu personaje</h1>
+    <div class="contenedor">
+        <form action="" method="post">
+            <p>Por favor rellena el siguiente formulario:</p>
+            <div class="contenedor_grid">
+                <div class="item item-1"><label>Nombre: </label></div>
+                <div class="item item-2"><input type="text" placeholder="Escribe el nombre de tu personaje..."/></div>
+                <div class="item item-3"><label>¿Tienes poderes especiales? </label></div>
+                <div class="item item-4"><input type="checkbox"/></div>
+                <div class="item item-5"><label>Color Favorito: </label></div>
+                <div class="item item-6"><input type="color" name="color_control"/></div>
+                <div class="item item-7"><label>Descripción del mismo: </label></div>
+                <div class="item item-8"><input type="text"/></div>
+                <div class="item item-9"><label>Email de su tribu: </label></div>
+                <div class="item item-10"><input type="email"/></div>
+                <div class="item item-11"><label>Nacimiento: </label></div>
+                <div class="item item-12"><input type="date" name="nacimiento"/></div>
+                <div class="item item-13"><label>Bando: </label></div>
+                <div class="item item-14"> 
+                    <!-- Opciones -->
+                    <select name="bandos">
+                        <option value="buenos">Buenos</option>
+                        <option value="malos">Malos</option>
+                    </select>
+                </div>
+                <div class="item item-15"><label>Historia del personaje:</label></div>
+                <div class="item item-16"><textarea name="historia" rows="10" cols="50" placeholder="Puntos débiles..."></textarea></div>
+                <div class="item item-17"><label>Imagen:</label></div>
+                <div class="item item-18"><input type="file"/></div>
+                <div class="item item-19"><input type="submit" value="Crear" id="archivo" name="archivo"/></div>
+            </div>
+        </form>
     </div>
 </body>
 </html>
