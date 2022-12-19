@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicitación navidad</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        body {
+            background: url("https://images.pexels.com/photos/14669211/pexels-photo-14669211.jpeg") fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .titulo {
+            text-align: center;
+            margin: 1em;
+        }
+        h1 {
+            background: rgb(255, 255, 255, 0.685);
+            border-radius: 10px;
+            padding: 20px 10px;
+            font-size: 70px;
+            color: rgb(241, 53, 90);
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+        }
+        .contenedor img {
+            display: flex;
+            margin: 1em;
+            width: 16rem;
+        }
+        .columna1 {
+            font-size: 20px;
+            text-align: center;
+            padding: 5px;
+            color: #fff;
+            margin-top: 1%;
+        }
+        .columna2 {
+            font-size: 20px;
+            text-align: center;
+            padding: 5px;
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                padding: 10px 0;
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="titulo">
+        <h1>Feliz Navidad hacker!</h1>
+    </div>
+
+    <div class="contenedor">
+        <div class="columna1">
+            <img src="https://i.imgur.com/z3s872J.jpeg" alt="imagen">
+            <p>Para comer en estas fechas</p>
+        </div>
+        <div class="columna2">
+            <img src="https://i.imgur.com/Mp7KFgm.jpeg" alt="imagen">
+            <p>Un regalo para la familia</p>
+        </div>
+    </div>
+</body>
+</html>
