@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript6_remix</title>
+    <style>
+        #circulo_rojo {
+            background-color: red;
+            border-radius: 50%;
+            float: left;
+            text-align: center;
+            color: black;
+            height: 100px;
+            width: 100px;
+        }
+
+        #circulo_verde {
+            background-color: green;
+            border-radius: 50%;
+            float: left;
+            text-align: center;
+            color: black;
+            height: 100px;
+            width: 100px;
+        }
+
+        #circulo_azul {
+            background-color: blue;
+            border-radius: 50%;
+            float: left;
+            text-align: center;
+            color: black;
+            height: 100px;
+            width: 100px;
+        }
+        .boton {
+            margin-top: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Utilidades de JavaScript</h1>
+    <div id="circulo_rojo"></div>
+    <div id="circulo_verde"></div>
+    <div id="circulo_azul"></div>
+    <button class="boton" type="button" onclick="document.getElementById('circulo_rojo').style.backgroundColor='white'">Ocultar</button>
+    <button class="boton" type="button" onclick="document.getElementById('circulo_verde').style.backgroundColor='white'">Ocultar</button>
+    <button class="boton" type="button" onclick="document.getElementById('circulo_azul').style.backgroundColor='white'">Ocultar</button>
+</body>
+</html>
