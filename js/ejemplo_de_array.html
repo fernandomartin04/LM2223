@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de array</title>
+</head>
+<body>
+    <script>
+        let mensajes=["Frase 1", "Frase 2", "Frase 3", "Frase 4", "Frase 5",  
+        "Frase 6", "Frase 7", "Frase 8", "Frase 9", "Frase 10"]
+        /*primero el inicio, segundo la condicion, tercero el paso a seguir*/
+        for (var i=mensajes.length-1;i>=0;i=i-1){ 
+            document.write("<hr>");
+            /*se pone "i" en lugar de 0 porque sino sale todo el rato fase 1*/
+            document.write(mensajes[i]+"<br>"); 
+        }
+    </script>
+</body>
+</html>
