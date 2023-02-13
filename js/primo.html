@@ -14,11 +14,19 @@
     <button onclick="esPrimo()">Es primo?</button>
     <script>
         function esPrimo(){
-            let entrada = document.getElementById("entrada").value;
-            if (parseInt (entrada)%1 == 0)
+            let entrada = parseInt(document.getElementById("entrada").value);
+            let i = 2; let esPrimo=true;
+            while (i<entrada && esPrimo) {
+                if (entrada%i == 0)
+                {
+                    document.getElementById("resultado").innerHTML = "No es primo";
+                    esPrimo=false;
+                }
+                i++;
+            }
+            if (esPrimo){
                 document.getElementById("resultado").innerHTML = "Es primo";
-            else 
-                document.getElementById("resultado").innerHTML = "No es primo";
+            }
         }
     </script>
 </body>
