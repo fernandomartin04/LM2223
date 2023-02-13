@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>par</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="" id="entrada">
+    </form>
+    <p id="resultado"></p>
+    <button onclick="esPar()">Es par?</button>
+    <script>
+        function esPar(){
+            let entrada = document.getElementById("entrada").value;
+            if (parseInt (entrada)%2 == 0)
+                document.getElementById("resultado").innerHTML = "Es par";
+            else 
+                document.getElementById("resultado").innerHTML = "Es impar";
+        }
+    </script>
+</body>
+</html>
