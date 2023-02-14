@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 13 Arrays</title>
+</head>
+<body>
+    <p>Pulsa el botón para sustraer el elemento</p>
+    <button onclick="sustrae()">Sustrae</button>
+    <p id="demo"></p>
+
+    <script>
+        var frutas = ["Platano ", "Naranja ", "Manzana ", "Mango."];
+        document.getElementById("demo").innerHTML = frutas;
+
+        function sustrae() {
+            frutas.pop();
+            document.getElementById("demo").innerHTML = frutas;
+        }
+    </script>
+</body>
+</html>
