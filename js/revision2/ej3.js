@@ -12,7 +12,7 @@ function validaciondni() {
 
     dni = dni.toUpperCase();
 
-    if(expresion_regular_dni.test(dni) === true){
+    if(expresion_regular_dni.test(DNI) === true){
         numero = dni.substr(0,dni.length-1);
         numero = numero.replace('X', 0);
         numero = numero.replace('Y', 1);
@@ -45,7 +45,7 @@ function validacionpin {
     }
     else {
         solucionpin = false;
-        alert('No coinciden los pin');
+        alert('No coinciden los pin')
     }
 }
 
@@ -60,5 +60,27 @@ function nombreusuario {
     apellido = apellido.substr(0,2);
     telefono = telefono.substr(-3,3);
 
+    //el valor del usuario sera de lo siguiente
     usuario = nombre+apellido+telefono
+}
+
+function validar() {
+    validaciondni();
+    validacionpin(); //Con esto se hará la función enviar cuando queden validadas estas funciones
+
+    if (soluciondni===true && solucionpin===true) {
+        nombreusuario();
+        alert('Su nombre de usuario es: ' + usuario)
+    }
+    else {
+        if (soluciondni===false && solucionpin===false){
+            alert('Los campos dni y pin no son correctos, inténtelo de nuevo')
+        }
+        if (soluciondni===false && solucionpin===true){
+            alert('El DNI no es correcto')
+        }
+        if (soluciondni===true && solucionpin===false){
+            alert('Los PIN introducidos no son correctos')
+        }
+    }
 }
