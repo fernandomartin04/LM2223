@@ -1,9 +1,12 @@
+//creación de variables que usaremos 
 var soluciondni;
 var solucionpin;
 var usuario;
 
+//Función para validar el DNI, (Se copia en internet)
+
 function validaciondni() {
-    var dni = document.getElementById("dni").value;
+    var dni = document.getElementById("DNI").value;
     var numero, let, letra;
     var expresion_regular_dni = /^[XYZ]?\d{5,8}[A-Z]$/;
 
@@ -31,4 +34,31 @@ function validaciondni() {
         //alert('Dni erroneo, formato no válido');
         soluciondni = false;
     }
+}
+/*Esta función valida el pin, ponemos las variables como value con el id=...*/
+function validacionpin {
+    var PIN = documen.getElementById("PIN").value;
+    var PIN2  = document.getElementById("PIN2").value;
+//con el if comparamos el pin con la repetición del pin, si son iguales bien sino con el else nos apareece que es falso
+    if (PIN == PIN2) {
+        solucionpin = true
+    }
+    else {
+        solucionpin = false;
+        alert('No coinciden los pin');
+    }
+}
+
+function nombreusuario {
+    var nombre = document.getElementById("nombre").value;
+    var apellido = document.getElementById("apellido").value;
+    var telefono = document.getElementById("telefono").value;
+
+    /* Esto hace que se elijan las primeras 2 letras y en el caso del tlf las tres últimas*/
+
+    nombre = nombre.substr(0,2);
+    apellido = apellido.substr(0,2);
+    telefono = telefono.substr(-3,3);
+
+    usuario = nombre+apellido+telefono
 }
