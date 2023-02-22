@@ -1,6 +1,5 @@
 var caja = document.getElementById("caja").value;
-var array = ["caja"];
-document.getElementById("texto").innerHTML = array;
+var texto = document.getElementById("texto").value;
 
 function añadir() {
     array.push();
