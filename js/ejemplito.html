@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de eventos</title>
+</head>
+<body>
+    <button onclick="muyMal()" onmouseover="cuidado()" onmouseout="bien()">No pulses aquí</button>
+    <p id="demo"></p>
+
+    <script>
+        function bien() {
+            document.getElementById("demo").innerHTML = "¡Bien alejado del botón";
+        }
+        function cuidado() {
+            document.getElementById("demo"),innerHTML = "¡No pulses el botón";
+        }
+        function muyMal() {
+            document.getElementById("demo").innerHTML = "¡Has desobrdecido!";
+        }
+    </script>
+</body>
+</html>
