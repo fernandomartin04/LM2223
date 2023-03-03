@@ -12,14 +12,15 @@
     <label for="">Valor: </label>
     <input type="text" placeholder="Valor" id="valor"><br>
     <button onclick="guardar()">Guardar</button>
+    <button onclick="recuperar()">Recuperar</button>
     <p id="demo"></p>
 
     <script>
         function guardar() {
             localStorage.setItem("Clave", "document.getElementById('clave')");
             localStorage.setItem("Valor", "document.getElementById('valor')");
-            document.getElementById("demo").innerHTML = localStorage.getItem("Clave");
-            document.getElementById("demo").innerHTML = localStorage.getItem("Valor");
+            document.getElementById("demo").innerHTML = 'localStorage.getItem("Clave")';
+            document.getElementById("demo").innerHTML = 'localStorage.getItem("Valor")';
         }
     </script>
 </body>
