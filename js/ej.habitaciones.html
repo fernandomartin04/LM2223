@@ -25,7 +25,7 @@
             let ninos = parseInt(document.getElementById("ninos").value);
             let familiares=0, triples=0, dobles_supletoria=0, dobles=0;
             let total = ninos+adultos;
-            if (ninos>2*adultos)
+            if (ninos>2*adultos) //Si hay más niños que el doble de adultos
             {
                 document.getElementById("reserva").innerHTML = "Imposible realizar reserva. Todos los menores deben estar acompañados en las habitaciones.";
             }
