@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedos 2.0</title>
+</head>
+<body>
+    <h1>Cuántos dedos tengo??</h1>
+    <input type="text" id="entradaTexto">
+    <button id="miBoton">Comprueba</button>
+    <script>
+        document.getElementById("miBoton").onclick = function() {
+            var numeroGanador;
+            var numeroOrdenador=Math.round(Math.random() * 5);
+            numeroGanador = document.getElementById("entradaTexto").value;
+            if (numeroGanador>5) { //Con este if y else consigo no poder introducir un número mayor que 5
+                alert("El número tiene que ser entre el 0 y el 5")
+            }
+            else if (numeroGanador<0) { //Con este que no sea menor que 0
+                alert("El número tiene que ser entre el 0 y el 5")
+            }
+            else {
+                while (numeroOrdenador != numeroGanador) { // "!=" significa distinto de
+                    if (numeroGanador === numeroOrdenador) { break;} //Condición con lo que salgo del bucle
+                    alert(numeroOrdenador + ", no es el mismo!");
+                    if (numeroOrdenador>numeroGanador) {
+                        numeroOrdenador--;
+                    }
+                    if (numeroOrdenador<numeroGanador) {
+                        numeroOrdenador++;
+                    }
+                }
+                alert("El ordenador adivinó el número es "+ numeroOrdenador)
+            }
+        }
+    </script>
+</body>
+</html>
