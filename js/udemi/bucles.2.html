@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucles 2.0</title>
+</head>
+<body>
+    <div id="tweetsDiv"></div>
+    <script>
+        var tweets = ["Hola a todos", "Me encanta el café", "Buenas noches"];
+        var cadenaTweets="";
+        for (var i=tweets.length-1; i>=0;i--) {
+            //tweets.lenth es la longitud de la variable tweets; i++ es ir sumandole 1 a i, es igual que i=i+1
+            //Está puesto para que aparezcan en un orden inverso, poniendo como inicio la longitud - 1 y como condicion que finalice cuando sea >=0, tambien restando 1
+            cadenaTweets = cadenaTweets + "<p>" + tweets[i] + "</p>";
+        }
+        document.getElementById("tweetsDiv").innerHTML = cadenaTweets;
+    </script>
+</body>
+</html>
