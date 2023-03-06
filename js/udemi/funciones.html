@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>¿Cuántos dedos tienes?</h1>
+        <p>
+            <select id="numeroDedos">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        <button id="adivinaBoton">¡Adivina!</button>
+        </p>
+        
+        <script type="text/javascript">
+            function hacerIntento(numeroCorrecto) {
+                var numeroMaquina = Math.random();
+                numeroMaquina = numeroMaquina * 6;
+                numeroMaquina = Math.floor(numeroMaquina);
+                if(numeroMaquina == numeroCorrecto) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            document.getElementById("adivinaBoton").onclick = function()
+            {
+                var miNumero = document.getElementById("numeroDedos").value;
+                var aciertoMaquina = false; // Variable tipo booleana o lógica (true o false)
+                var numeroIntentos = 1;
+                
+                while (aciertoMaquina == false)
+                    {
+                        
+                        if (hacerIntento(miNumero) == true)
+                            {
+                                aciertoMaquina = true; // condición para salir del bucle
+                                alert("Acerté! El número era "+miNumero+". Me ha costado "+numeroIntentos+" intentos.");
+                            }
+                        else
+                            {
+                                numeroIntentos = numeroIntentos+1; // numeroIntentos++
+                            }
+                    }
+            }
+        </script>
+</body>
+</html>
