@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej2</title>
+    <style>
+        #errorPIN{
+            color: red;
+        }
+        #errorPIN2{
+            color: red;
+        }
+        #errorNombre{
+            color: red;
+        }
+        #errorApellido{
+            color: red;
+        }
+        #errorCorreo{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre"/><p id="errorNombre"></p><br>
+
+<label for="apellidos">Apellidos:</label>
+    <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"/><p id="errorApellido"></p><br>
+
+<label for="nombre">Correo electrónico:</label>
+    <input type="text" name="nombre" id="correo" placeholder="Correo"/><p id="errorCorreo"></p><br>
+
+<label for="edad">Contraseña:</label>
+    <input name="edad" type="password" id="PIN" maxlength="8" placeholder="Contraseña"/><p id="errorPIN"></p><br>
+
+<label for="matricula">Repetir contraseña:</label>
+    <input name="matricula" type="password" id="PIN2" placeholder="Repetir contraseña"/><p id="errorPIN2"></p><br>
+
+    <input onclick="validacion" type="submit" name="Validar" id="validar" value="Validar" />
+
+
+<script>
+    
+//********
+    function validacionNombre() {
+        let valor = document.getElementById("nombre").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
+            return false;
+            document.getElementById("errorNombre").innerHTML = 'Este campo es obligatorio de rellenar';
+        }
+    }
+
+    function validacionApellido() {
+        let valor = document.getElementById("apellidos").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
+            return false;
+            document.getElementById("errorApellido").innerHTML = 'Este campo es obligatorio de rellenar';
+        }
+    }
+
+    function validacionCorreo() {
+        let valor = document.getElementById("correo").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
+            return false;
+            document.getElementById("errorCorrreo").innerHTML = 'Este campo es obligatorio de rellenar';
+        }
+    }
+
+    function validacionPIN() {
+        let valor = document.getElementById("PIN").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
+            return false;
+            document.getElementById("errorPIN").innerHTML = 'Este campo es obligatorio de rellenar';
+        }
+        else if (document.getElementById("PIN").value<10000000 ) {
+            document.getElementById("errorPIN").innerHTML = "Error, mínimo tiene que tener 8 dígitos";
+        }
+    }
+
+    function validacionPIN2() {
+        let valor = document.getElementById("PIN2").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
+            document.getElementById("errorPIN").innerHTML = 'Este campo es obligatorio de rellenar';
+            return false;
+        }
+    }
+//**********************
+    function validacionPines() {
+        var PIN = documen.getElementById("PIN").value;
+        var PIN2  = document.getElementById("PIN2").value;
+        //con el if comparamos el pin con la repetición del pin, si son iguales bien sino con el else nos apareece que es falso
+        if (PIN == PIN2) {
+        solucionpin = true
+        }
+        else {
+        solucionpin = false;
+        alert('No coinciden los pin')
+        }
+    }
+//*********************
+    function validacion() {
+        validacionNombre();
+        validacionApellido();
+        validacionCorreo();
+        validacionPIN();
+        validacionPIN2();
+        validacionPines();
+    }
+
+</script>
+</body>
+</html>
+
+
