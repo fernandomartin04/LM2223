@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        label {
+            width: 150px;
+            float: left;
+            margin-bottom: 5px;
+        }
+        input {
+            float: left;
+        }
+        input,
+        select {
+            width: 150px;
+            margin-bottom: 5px;
+        }
+        fieldset {
+            background: #ccff99;
+            width: 350px;
+        }
+        .error {
+            border: solid 2px #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Validación de un Formulario</legend>
+        <form name="formulario" id="formulario" action="http://www.laweb.es" method="get">
+            <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" />
+            <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" id="apellidos" />
+            <label for="edad">Edad:</label>
+                <input name="edad" type="text" id="edad" maxlength="3" />
+            <label for="matricula">Matrícula Coche:</label>
+                <input name="matricula" type="text" id="matricula" value="XXXX AAA" />
+            <label for="provincia">Provincia:</label>
+                <select name="provincia" id="provincia">
+                    <option value="0" selected="selected">Seleccione Provincia</option>
+                    <option value="H">Huesca</option>
+                    <option value="ZA">Zaragoza</option>
+                    <option value="T">Teruel</option>
+                </select>
+            <label></label>
+            <input type="reset" name="limpiar" id="limpiar" value="Limpiar" />
+            <input type="submit" name="enviar" id="enviar" value="Enviar" />
+        </form>
+    </fieldset>
+    
+
+    <script>
+
+// En la variable que pongamos aquí gestionaremos el evento por defecto
+function validar(e) {
+	// El evento 'e' está asociado al botón 'enviar' (type=submit)
+	// en este caso lo que hace es enviar el formulario
+
+	// Validamos cada una de las cajas de texto con llamadas a sus funciones correspondientes.
+	if (
+		validarCamposTexto(this) &&
+		validarProvincia() &&
+		confirm("¿Deseas enviar el formulario?")
+	)
+		return true;
+	else {
+		// Cancelamos el evento de envío por defecto asignado al botón de 'submit' enviar
+		e.preventDefault();
+		return false; //Salimos de la función devolviendo false
+	}
+}
+//----------------------------------------------------------//
+
+function validarCamposTexto(objeto) {
+	// A esta función se le pasa como parámetro el propio botón 'enviar' (this)
+
+	// La propiedad 'form' del botón 'enviar' contiene la referencia del formulario
+	let formulario = objeto.form;
+
+	// Recorremos todos los elementos del formulario
+	for (let i = 0; i < formulario.elements.length; i++) {
+		// Eliminamos la clase .error que estuviera asignada a algún campo
+		formulario.elements[i].classList.remove("error");
+
+		// Buscamos los que son de tipo texto
+		if (
+			formulario.elements[i].type == "text" &&
+			formulario.elements[i].value == ""
+		) {
+			alert(
+				"El campo: " +
+					formulario.elements[i].name +
+					" no puede estar en blanco"
+			);
+			formulario.elements[i].classList.add("error");
+			formulario.elements[i].focus();
+			return false;
+		}
+		// Validamos también el campo 'edad'
+		else if (formulario.elements[i].id == "edad") {
+			let laEdad = formulario.elements[i].value;
+			if (isNaN(laEdad) || laEdad < 0 || laEdad > 115) {
+				alert(
+					"El campo: " +
+						formulario.elements[i].name +
+						" posee valores incorrectos"
+				);
+				formulario.elements[i].classList.add("error");
+				formulario.elements[i].focus();
+				return false;
+			}
+		} else if (formulario.elements[i].id == "matricula") {
+			// 4 Números 1 espacio en blanco(opcional) y 3 letras de la A-Z en mayúsculas
+			const patron = /^\d{4}\s?[A-Z]{3}$/;
+
+			if (patron.test(document.getElementById("matricula").value)) {
+				document.getElementById("matricula").classList.remove("error");
+				return true;
+			} else {
+				alert(
+					"El campo: Matricula no está correcto.\n\nCuatro números, espacio en blanco opcional y 3 letras mayúsculas."
+				);
+				// Situamos el foco en el campo matrícula y le asignamos la clase .error.
+				document.getElementById("matricula").focus();
+				document.getElementById("matricula").classList.add("error");
+				return false;
+			}
+		}
+	}
+	// Si todos los campos de texto son válidos devolvemos 'true'
+	return true;
+}
+//----------------------------------------------------------//
+
+function validarProvincia() {
+	// Comprueba que la opción seleccionada sea diferente a 0.
+	// Si es la 0 es que no ha seleccionado ningún nombre de Provincia.
+	if (document.getElementById("provincia").selectedIndex == 0) {
+		alert("Atención!: Debes seleccionar una provincia.");
+
+		// Situamos el foco en el campo provincia y le asignamos la clase .error.
+		document.getElementById("provincia").focus();
+		document.getElementById("provincia").classList.add("error");
+		return false;
+	} else return true;
+}
+
+//----------------------------------------------------------//
+
+// Al hacer click en el botón de enviar se llama a la función 'validar',
+// que se encargará de validar el formulario.
+document.getElementById("enviar").addEventListener("click", validar, false);
+
+
+    </script>
+
+</body>
+</html>
