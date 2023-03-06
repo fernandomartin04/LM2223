@@ -21,93 +21,94 @@
         #errorCorreo{
             color: red;
         }
+        #errorCheckbox {
+            color: red;
+        }
     </style>
 </head>
 <body>
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre"/><p id="errorNombre"></p><br>
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre"/><label id="errorNombre"></label><br><br>
 
 <label for="apellidos">Apellidos:</label>
-    <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"/><p id="errorApellido"></p><br>
+    <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"/><label id="errorApellido"></label><br><br>
 
-<label for="nombre">Correo electrónico:</label>
-    <input type="text" name="nombre" id="correo" placeholder="Correo"/><p id="errorCorreo"></p><br>
+<label for="correo">Correo electrónico:</label>
+    <input type="text" name="correo" id="correo" placeholder="Correo"/><label id="errorCorreo"></label><br><br>
 
-<label for="edad">Contraseña:</label>
-    <input name="edad" type="password" id="PIN" maxlength="8" placeholder="Contraseña"/><p id="errorPIN"></p><br>
+<label for="PIN">Contraseña:</label>
+    <input name="PIN" type="password" id="PIN" placeholder="Contraseña"/><label id="errorPIN"></label><br><br>
 
-<label for="matricula">Repetir contraseña:</label>
-    <input name="matricula" type="password" id="PIN2" placeholder="Repetir contraseña"/><p id="errorPIN2"></p><br>
+<label for="PIN2">Repetir contraseña:</label>
+    <input name="PIN2" type="password" id="PIN2" placeholder="Repetir contraseña"/><label id="errorPIN2"></label><br><br>
 
-    <input onclick="validacion()" type="submit" name="Validar" id="validar" value="Validar" />
+<input type="checkbox" name="checkbox" id="checkbox">
+    <label for="checkbox">Acepto las condiciones de uso</label><label id="errorCheckbox"></label><br><br>
+
+    <button onclick="validar()">Validar</button>
 
 
 <script>
     
-//********
+//********NOMBRE************
     function validacionNombre() {
-        let valor = document.getElementById("nombre").value;
-        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
-            return false;
-            document.getElementById("errorNombre").innerHTML = 'Este campo es obligatorio de rellenar';
-        }
+        valor = document.getElementById("nombre").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            document.getElementById("errorNombre").innerHTML = "  Este campo es obligatorio de rellenar";}
     }
-
+//*******APELLIDO*******
     function validacionApellido() {
-        let valor = document.getElementById("apellidos").value;
-        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
-            return false;
-            document.getElementById("errorApellido").innerHTML = 'Este campo es obligatorio de rellenar';
-        }
+        valor = document.getElementById("apellidos").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            document.getElementById("errorApellido").innerHTML = "  Este campo es obligatorio de rellenar";}
     }
-
+//*****CORREO*******
     function validacionCorreo() {
-        let valor = document.getElementById("correo").value;
-        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
-            return false;
-            document.getElementById("errorCorrreo").innerHTML = 'Este campo es obligatorio de rellenar';
-        }
+        valor = document.getElementById("correo").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            document.getElementById("errorCorreo").innerHTML = "  Este campo es obligatorio de rellenar";}
     }
-
+//******PIN******
     function validacionPIN() {
-        let valor = document.getElementById("PIN").value;
-        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
-            return false;
-            document.getElementById("errorPIN").innerHTML = 'Este campo es obligatorio de rellenar';
+        valor = document.getElementById("PIN").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            document.getElementById("errorPIN").innerHTML = "  Este campo es obligatorio de rellenar";}
+        else if ( isNaN(valor) ) {
+            document.getElementById("PIN").innerHTML = "  El valor introducido tiene que ser numérico";
         }
         else if (document.getElementById("PIN").value<10000000 ) {
-            document.getElementById("errorPIN").innerHTML = "Error, mínimo tiene que tener 8 dígitos";
+        document.getElementById("errorPIN").innerHTML = "  Error, mínimo tiene que tener 8 dígitos";
+        }
+    }
+//******PIN2*******
+    function validacionPIN2() {
+        valor = document.getElementById("PIN2").value;
+        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            document.getElementById("errorPIN2").innerHTML = "  Este campo es obligatorio de rellenar";}
+    }
+//******VALIDAR PINES****
+    function validacionPINES() {
+        if (document.getElementById("PIN").value != document.getElementById("PIN2").value) {
+            document.getElementById("errorPIN2").innerHTML = "  Las contraseñas no coinciden";
+        }
+    }
+//*****VALIDAR CHECKBOX****
+    function validacionCheckbox() {
+        elemento = document.getElementById("checkbox");
+        if( !elemento.checked ) {
+            document.getElementById("errorCheckbox").innerHTML = "  Debes aceptar las condiciones del formulario";
         }
     }
 
-    function validacionPIN2() {
-        let valor = document.getElementById("PIN2").value;
-        if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
-            document.getElementById("errorPIN").innerHTML = 'Este campo es obligatorio de rellenar';
-            return false;
-        }
-    }
-//**********************
-    function validacionPines() {
-        var PIN = documen.getElementById("PIN").value;
-        var PIN2  = document.getElementById("PIN2").value;
-        //con el if comparamos el pin con la repetición del pin, si son iguales bien sino con el else nos apareece que es falso
-        if (PIN == PIN2) {
-        solucionpin = true
-        }
-        else {
-        solucionpin = false;
-        alert('No coinciden los pin')
-        }
-    }
-//*********************
-    function validacion() {
-        validacionNombre();
-        validacionApellido();
-        validacionCorreo();
-        validacionPIN();
-        validacionPIN2();
-        validacionPines();
+
+    function validar() {
+    validacionNombre();
+    validacionApellido();
+    validacionCorreo();
+    validacionPIN();
+    validacionPIN2();
+    validacionPINES();
+    validacionCheckbox();
     }
 
 </script>
