@@ -5,8 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adivina cifras</title>
+    <style>
+        #boton_comprueba {
+            display:none;
+        }
+        #numero {
+            display:none;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>¡Adivina el número en tiempo record!</h1>
+    <p>He pensado un número de 3 cifras...</p>
+    <p id="secreto">123</p>
+    <button id="boton_comenzar" onclick="comenzar()">Comenzar</button>
+    <input type="text" id="numero" placeholder="Escribe número"><br>
+    <button id="boton_comprueba" onclick="comprueba()">Comprueba</button>
+    <p id="resultado"></p>
+
+    <script>
+        //Creo las variables de los valores del número q introduzco y del número q tngo q averiguar
+        var secreto = document.getElementById("secreto").value;
+        var miNumero = document.getElementById("numero").value;
+
+        //Separo con "split" cada uno de las cifras del número a adivinar y del introducido
+        console.log(secreto.split(''));
+        console.log(miNumero.split(''));
+        //aquí creo las variables del split de antes para poder utilizarlo en las funciones
+        var secreto_cifras = secreto.split('');
+        var miNumero_cifras = miNumero.split('');
+
+        //Aquí paso de la pantalla del comienzo al juego simplemente cambiando 
+        function comenzar() {
+            document.getElementById("boton_comenzar").style.display = "none";
+            document.getElementById("numero").style.display = "block";
+            document.getElementById("boton_comprueba").style.display = "block";
+        }
+        
+        //Función que va a realizar el botón del juego
+        function boton_comprueba() {
+            if (console.log(secreto_cifras[0]) = console.log(miNumero_cifras[0])) {
+                document.getElementById("resultado").innerHTML = "Enhorabuena, tu opción " + miNumero;
+            }
+        }
+
+
+    </script>
 </body>
 </html>
