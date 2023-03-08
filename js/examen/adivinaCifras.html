@@ -44,20 +44,30 @@
         
         //Función que va a realizar el botón del juego
         function boton_comprueba() {
-            if (miNumero = secreto) {
-                document.getElementById("resultado").innerHTML = "Enhorabuena el numero era " + miNumero;
+            let abc = document.getElementById("resultado").innerHTML;
+            if (miNumero == secreto) {
+                abc = "Enhorabuena el numero era " + miNumero;
             }
-            else if (console.log(secreto_cifras[0]) = console.log(miNumero_cifras[0])) {
-                document.getElementById("resultado").innerHTML = "Enhorabuena, tu opción " + miNumero + "Tiene una cifra en común";
+            else if (console.log(secreto_cifras[0]) == console.log(miNumero_cifras[0])) {
+                abc = "Enhorabuena, tu opción " + miNumero + "Tiene una cifra en común";
             }
-            else if (console.log(secreto_cifras[1]) = console.log(miNumero_cifras[1])) {
-                document.getElementById("resultado").innerHTML = "Enhorabuena, tu opción " + miNumero + "Tiene una cifra en común";
+            else if (console.log(secreto_cifras[1]) == console.log(miNumero_cifras[1])) {
+                abc = "Enhorabuena, tu opción " + miNumero + "Tiene una cifra en común";
             }
-            else if (console.log(secreto_cifras[2]) = console.log(miNumero_cifras[2])) {
-                document.getElementById("resultado").innerHTML = "Enhorabuena, tu opción " + miNumero + "Tiene una cifra en común";
+            else if (console.log(secreto_cifras[2]) == console.log(miNumero_cifras[2])) {
+                abc = "Enhorabuena, tu opción " + miNumero + "Tiene una cifra en común";
+            }
+            else if (console.log(secreto_cifras[0]) == console.log(miNumero_cifras[0]) && console.log(secreto_cifras[1]) == console.log(miNumero_cifras[1])) {
+                abc = "Vas muy bien, yu opción " + miNumero + " coincide en dos cifras";
+            }
+            else if (console.log(secreto_cifras[0]) == console.log(miNumero_cifras[0]) && console.log(secreto_cifras[2]) == console.log(miNumero_cifras[2])) {
+                abc = "Vas muy bien, yu opción " + miNumero + " coincide en dos cifras";
+            }
+            else if (console.log(secreto_cifras[1]) == console.log(miNumero_cifras[1]) && console.log(secreto_cifras[2]) == console.log(miNumero_cifras[2])) {
+                abc = "Vas muy bien, yu opción " + miNumero + " coincide en dos cifras";
             }
             else {
-                document.getElementById("resultado").innerHTML = "Lo siento, " + miNumero + "no tiene ninguna cifra en común";
+                abc = "Lo siento, " + miNumero + "no tiene ninguna cifra en común";
             }
         }
 
