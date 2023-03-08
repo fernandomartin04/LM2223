@@ -44,8 +44,20 @@
         
         //Función que va a realizar el botón del juego
         function boton_comprueba() {
-            if (console.log(secreto_cifras[0]) = console.log(miNumero_cifras[0])) {
-                document.getElementById("resultado").innerHTML = "Enhorabuena, tu opción " + miNumero;
+            if (miNumero = secreto) {
+                document.getElementById("resultado").innerHTML = "Enhorabuena el numero era " + miNumero;
+            }
+            else if (console.log(secreto_cifras[0]) = console.log(miNumero_cifras[0])) {
+                document.getElementById("resultado").innerHTML = "Enhorabuena, tu opción " + miNumero + "Tiene una cifra en común";
+            }
+            else if (console.log(secreto_cifras[1]) = console.log(miNumero_cifras[1])) {
+                document.getElementById("resultado").innerHTML = "Enhorabuena, tu opción " + miNumero + "Tiene una cifra en común";
+            }
+            else if (console.log(secreto_cifras[2]) = console.log(miNumero_cifras[2])) {
+                document.getElementById("resultado").innerHTML = "Enhorabuena, tu opción " + miNumero + "Tiene una cifra en común";
+            }
+            else {
+                document.getElementById("resultado").innerHTML = "Lo siento, " + miNumero + "no tiene ninguna cifra en común";
             }
         }
 
