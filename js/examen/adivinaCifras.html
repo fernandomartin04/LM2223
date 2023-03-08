@@ -32,8 +32,10 @@
         console.log(secreto.split(''));
         console.log(miNumero.split(''));
         //aquí creo las variables del split de antes para poder utilizarlo en las funciones
+        
         var secreto_cifras = secreto.split('');
         var miNumero_cifras = miNumero.split('');
+        
 
         //Aquí paso de la pantalla del comienzo al juego simplemente cambiando 
         function comenzar() {
@@ -43,7 +45,7 @@
         }
         
         //Función que va a realizar el botón del juego
-        function boton_comprueba() {
+        function comprueba() {
             let abc = document.getElementById("resultado").innerHTML;
             if (miNumero == secreto) {
                 abc = "Enhorabuena el numero era " + miNumero;
