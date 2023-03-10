@@ -15,12 +15,19 @@
             var numeroGanador;
             var numeroOrdenador=Math.round(Math.random() * 5);
             numeroGanador = document.getElementById("entradaTexto").value;
-            if (numeroGanador>5) { //Con este if y else consigo no poder introducir un número mayor que 5
+            if ( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            alert('Este campo es obligatorio de rellenar');
+            }
+            else if (numeroGanador>5) { //Con este if y else consigo no poder introducir un número mayor que 5
                 alert("El número tiene que ser entre el 0 y el 5")
             }
             else if (numeroGanador<0) { //Con este que no sea menor que 0
                 alert("El número tiene que ser entre el 0 y el 5")
             }
+            
+            valor = document.getElementById("entradaTexto").value;
+
+            
             else {
                 while (numeroOrdenador != numeroGanador) { // "!=" significa distinto de
                     if (numeroGanador === numeroOrdenador) { break;} //Condición con la que salgo del bucle
