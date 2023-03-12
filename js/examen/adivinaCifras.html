@@ -19,24 +19,18 @@
     <p>He pensado un número de 3 cifras...</p>
     <p id="secreto">123</p>
     <button id="boton_comenzar" onclick="comenzar()">Comenzar</button>
-    <input type="text" id="numero" placeholder="Escribe número"><br>
+    <input type="text" id="miNumero" placeholder="Escribe número"><br>
     <button id="boton_comprueba" onclick="comprueba()">Comprueba</button>
     <p id="resultado"></p>
 
     <script>
         //Creo las variables de los valores del número q introduzco y del número q tngo q averiguar
         var secreto = document.getElementById("secreto").value;
-        var miNumero = document.getElementById("numero").value;
+        var miNumero = document.getElementById("miNumero").value;
         
 
-        //Separo con "split" cada uno de las cifras del número a adivinar y del introducido
-        console.log(secreto.split(''));
-        console.log(miNumero.split(''));
-        //aquí creo las variables del split de antes para poder utilizarlo en las funciones
-        
-        var secreto_cifras = secreto.split('');
-        var miNumero_cifras = miNumero.split('');
-        
+        var secreto = new String(document.getElementById("secreto").value);
+        var miNumero = new String(document.getElementById("miNumero").value);
 
         //Aquí paso de la pantalla del comienzo al juego simplemente cambiando 
         function comenzar() {

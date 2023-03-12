@@ -17,7 +17,7 @@
 <body>
     <h1>¡Adivina el número en tiempo record!</h1>
     <p>He pensado un número de 3 cifras...</p>
-    <p id="secreto"></p>
+    <p id="secreto"></p> <!-- Para el record -->
     <button id="btn-comenzar" onclick="comenzar()">Comenzar</button>
     <input type="text" id="numero" placeholder="Escribe número"><br>
     <button id="btn-comprueba" onclick="comprueba()">Comprueba</button>
@@ -28,38 +28,42 @@
         function generaNumero(){
             numeroAzar = Math.ceil(Math.random()*9).toString()
                     + Math.ceil(Math.random()*9).toString()
-                    + Math.ceil(Math.random()*9).toString();
-            document.getElementById("secreto").innerHTML = numeroAzar;        
+                    + Math.ceil(Math.random()*9).toString(); //Aqui hacemos un string compuesto por tres partes de un numero random del 0 al 9
+            document.getElementById("secreto").innerHTML = numeroAzar; //Le ponemos al valor del numero secreto lo q acabamos de hacer  
         } 
         function comenzar(){
-            inicio = new Date().getTime();
-            generaNumero();
-            document.getElementById("btn-comenzar").style.display = "none";
+            inicio = new Date().getTime(); //Aqui obtenemos el tiempo total desde 1970 hasta el comienzo del juego
+            generaNumero(); //Llamamos a la funcion de generar el numero nada mas comenzar el juego
+            document.getElementById("btn-comenzar").style.display = "none"; //Quitamos la pantalla del inicio y aparece la del juego usando los estilos, display block o none
             document.getElementById("btn-comprueba").style.display = "block";
             document.getElementById("numero").style.display = "block";
-            var recordActual = window.localStorage.getItem("record");
-            if (recordActual!=null)
-                document.getElementById("secreto").innerHTML = "El record actual está en " + recordActual + " segundos. <br>" + numeroAzar;
-            document.getElementById("resultado").innerHTML = "";
+            var recordActual = window.localStorage.getItem("record"); //guardamos con localStorage el record de menor tiempo (Loq pone record, se almacena con ese nombre)
+            if (recordActual!=null) //si hay un record(distinto de null)...
+                document.getElementById("secreto").innerHTML = "El record actual está en " + recordActual + " segundos. <br>" + numeroAzar; //Aqui ponemos el record
+                document.getElementById("resultado").innerHTML = "";
         }
         function comprueba(){
             let numero = document.getElementById("numero").value;
             if (numero == numeroAzar)
             {
-                let fin = new Date().getTime();
-                let diferencia = (fin-inicio)/1000;
+                let fin = new Date().getTime(); //Aquí hacemos q cuando el numero sea acertado, se haya contado el tiempo desde el 1970
+                let diferencia = (fin-inicio)/1000; /*Con esto hacemos que el tiempo TOTAL salga en segundos. Esto es ya que la funcion 
+                                                    del tiempo es la misma en los dos sitios solo q aqui obtenemos el tiempo en desde ese año y en el otro 
+                                                     tenemos el tiempo desde q comenzamos a jugar, al restarlos tenemos el tiempo q hemos jugado*/
                 document.getElementById("resultado").innerHTML = "Enhorabuena, acertaste en " + diferencia + " segundos";
-                var record = window.localStorage.getItem("record");
-                if (record!=null){
-                    var recordReal = parseFloat(record);
-                    if (diferencia<recordReal){
-                        window.localStorage.setItem("record",diferencia.toString());
+
+
+                var record = window.localStorage.getItem("record");  //Creamos la variable record 
+                if (record!=null){ //Si existe un record...
+                    var recordReal = parseFloat(record);  //Tiempo tardado esta partida
+                    if (diferencia<recordReal){ //Si el tiempo tardado en esta partida es mejor q el nuevo...
+                        window.localStorage.setItem("record",diferencia.toString());  //Guardar el resultado en el localStorage llamado "record" 
                         document.getElementById("resultado").innerHTML += "¡Nuevo record!";
                     }
                     
                 }
-                else{
-                    window.localStorage.setItem("record",diferencia.toString());
+                else{ //Si no hay un record guardaremos el resultado de esta partida y será el nuevo record
+                    window.localStorage.setItem("record",diferencia.toString()); 
                     document.getElementById("resultado").innerHTML += " ¡Nuevo record!";
                 }
                 document.getElementById("btn-comenzar").style.display = "block";
@@ -67,10 +71,13 @@
                 document.getElementById("numero").style.display = "none";
 
             }
-            else {
+            else { //Cuando no acertemos el número...
                 // Miramos coincidencias
                 let i=0, coincidencias=0;
-                while (i<numeroAzar.length && i<numero.length){
+                while (i<numeroAzar.length && i<numero.length){ /*Cuando nuestro numero y el numero al azar sean mayores de 0 (i) recorrer el bucle,
+                    si el numero al azar es igual al numero que hemos puesto en alguna cifra, poner coincidencias 1 o las q sean, ya que esto es un bucle y recorre el numero,
+                    entoces recorrera el numero, si tiene 0 coincidencias, para y lo pone, si tiene una coincidencia lo vuelve a recorrer y si ve qno hay mas, pone 1
+                    si ve q hay dos pues pondra 2 y recorrera de nuevo el numero*/
                     if (numeroAzar[i]==numero[i])
                         coincidencias+=1;
                     i++;
