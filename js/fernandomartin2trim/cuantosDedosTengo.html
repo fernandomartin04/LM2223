@@ -7,6 +7,40 @@
     <title>Cuantos dedos tengo 2.0</title>
 </head>
 <body>
-    
+    <h1>Cuántos dedos tengo?</h1>
+    <p id="numeroSecreto"></p>
+    <p id="solucion"></p>
+    <input type="text" id="miNumero"><br><br>
+    <button onclick="borrarRecord">Borrar record</button> 
+    <button onclick="generarNumero">Generar nuevo número</button> 
+    <button onclick="comprueba">Comprueba</button>
+
+    <script>
+
+    function comprueba() {
+            var numeroOrdenador=Math.round(Math.random() * 5);
+            var miNumero = document.getElementById("miNumero").value;
+            if (miNumero>5) { //Con este if y else consigo no poder introducir un número mayor que 5
+                alert("El número tiene que ser entre el 0 y el 5")
+            }
+            else if (miNumero<0) { //Con este que no sea menor que 0
+                alert("El número tiene que ser entre el 0 y el 5")
+            }
+            else {
+                var contador = 1;
+                while (numeroOrdenador != miNumero) { // "!=" significa distinto de
+                    if (numeroGanador === miNumero) { break;} //Condición con la que salgo del bucle
+                    alert(numeroOrdenador + ", no es el mismo!");
+                    contador++;
+                }
+                document.getElementById("solucion").innerHTML = "Acertaste el número en intentos = " + contador ;
+            }
+            var recordActual = window.localStorage.getItem("record");
+                if (recordActual!=null) //si hay un record(distinto de null)...
+                document.getElementById("secreto").innerHTML = "El record actual está en " + recordActual + " intentos."; //Aqui ponemos el record
+                document.getElementById("resultado").innerHTML = "";
+        }
+       
+    </script>
 </body>
 </html>

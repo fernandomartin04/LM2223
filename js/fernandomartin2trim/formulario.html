@@ -24,7 +24,7 @@
     <label for="correo">Correo electrónico:</label>
     <input type="text" name="correo" id="correo" placeholder="Correo"/><label id="errorCorreo"></label><br><br>
 
-    <label for="correo">Correo electrónico:</label>
+    <label for="correo">Repetir correo electrónico:</label>
     <input type="text" name="correo" id="repetirCorreo" placeholder="Correo"/><label id="errorRepetirCorreo"></label><br><br>
 
     <button onclick="registrarse()">Registrarse</button>
@@ -76,15 +76,23 @@
             validacionNombre();
             validacionCorreo();
             validaCorreos();
+            
+                var nombre = document.getElementById("nombre").value; //Creo la variable nombre
+                nombre = nombre.substr(0,3);
+                correo = correo2.substr(0,3); //Obtengo las 3 primeras cifras de ambos
+                usuario = nombre+correo2; //Doy el valor al usuario
 
-            var nombre = document.getElementById("nombre").value; //Creo la variable nombre
-            nombre = nombre.substr(0,3);
-            correo = correo.substr(0,3); //Obtengo las 3 primeras cifras de ambos
-            var usuario = nombre+correo; //Doy el valor al usuario
+                contraseña = Math.ceil(Math.random()*9).toString()
+                    + Math.ceil(Math.random()*9).toString()
+                    + Math.ceil(Math.random()*9).toString()
+                    + Math.ceil(Math.random()*9).toString()
+                    + Math.ceil(Math.random()*9).toString()
+                    + Math.ceil(Math.random()*9).toString(); 
 
-            var contraseña = Math.round(Math.random() * 999999);
+                
 
-            alert ('Su usuario es: ' + usuario + 'ysu contraseña ' + contraseña);
+                alert ('Su usuario es: ' + usuario + 'y su contraseña ' + contraseña);
+            
         }
 
     </script>
