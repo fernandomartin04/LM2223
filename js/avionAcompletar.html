@@ -18,7 +18,7 @@
     <script>
     	var objImage= null;
     	function iniciar(){
-    			objImage = ***********; /* Obtenemos el objeto que representa el avion */
+    			objImage = document.getElementById("avion").value; /* Obtenemos el objeto que representa el avion */
     			objImage.style.position='relative';
     			objImage.style.left='1000px';
     			objImage.style.top='300px';
@@ -30,7 +30,7 @@
     		switch(codigo)
             {
     		    case 37: //Flecha izquierda
-						***********
+						moverIzquierda();
     					break;
     			case 38: //Flecha arriba
     					moverArriba();
@@ -47,7 +47,7 @@
     		objImage.style.left=parseInt(objImage.style.left)-10 +'px';
         document.getElementById('mensaje').innerHTML = "Izquierda";
     	}
-    	*********** {
+    	function moverArriba() {
     	  	objImage.style.top=parseInt(objImage.style.top)-10 +'px';
         	document.getElementById('mensaje').innerHTML = "Arriba";
     	}
@@ -59,7 +59,7 @@
     	    objImage.style.top= parseInt(objImage.style.top)+10 +'px';
          document.getElementById('mensaje').innerHTML = "Abajo";
     	}
-    	window.onload = *********** /* Se ejecutará al cargar la página */
+    	window.onload = iniciar(); /* Se ejecutará al cargar la página */
     	</script>
 
   </body>
