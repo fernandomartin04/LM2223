@@ -1,0 +1,34 @@
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .producto {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 200px;
+  }
+  
+  .producto img {
+    max-width: 100%;
+  }
+  
+  .carrito {
+    margin-top: 50px;
+  }
+  
+  #lista-carrito {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #lista-carrito li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  #vaciar-carrito {
+    margin-right: 10px;
+  }
