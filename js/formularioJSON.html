@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario JSON</title>
+</head>
+<body>
+    <p id="contenido"></p>
+    <form action="">
+        <label for="">Nombre </label><input type="text" id="nombre"><br><br>
+        <label for="">Apellido </label><input type="text" id="apellido"><br><br>
+        <label for="">Correo </label><input type="email" id="correo"><br><br>
+        <button onclick="registrar()">Registrar</button>
+    </form>
+    <script>
+        var objeto = localStorage.getItem("usuario");
+        if (objeto!=null) {
+            document.getElementById("contenido").innerHTML = objeto;
+        }
+        function registrar() {
+            let usuario = {
+                nombre: document.getElementById("nombre").value,
+                apellido: document.getElementById("apellido").value,
+                correo: document.getElementById("correo").value,
+            };
+            /*Cómo podemos guardar la informacion con localStorage*/
+            localStorage.setItem("usuario",JSON.stringify(usuario));
+            document.getElementById("contenido").innerHTML = JSON.stringify(usuario);
+        }
+
+    </script>
+</body>
+</html>

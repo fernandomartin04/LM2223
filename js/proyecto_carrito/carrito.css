@@ -1,34 +1,122 @@
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .producto {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    width: 200px;
-  }
-  
-  .producto img {
-    max-width: 100%;
-  }
-  
-  .carrito {
-    margin-top: 50px;
-  }
-  
-  #lista-carrito {
-    list-style: none;
-    padding: 0;
-  }
-  
-  #lista-carrito li {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  #vaciar-carrito {
-    margin-right: 10px;
-  }
+body{
+  background-color:lightsalmon ;
+ }
+ .productos {
+     display: flex;
+     flex-wrap: wrap;   
+   }
+   
+   .producto {
+     margin: 10px;
+     padding: 10px;
+     border: 1px solid #ccc;
+     width: 200px;
+     justify-content: center;
+     text-align: center;
+     background-color: white;
+     justify-content: space-between;
+     border: 1px solid black ;
+   }
+   
+   .producto img {
+     max-width: 100%;
+   }
+   
+   #carrito {
+     margin-top: 50px;
+     border: 1px solid black;
+     background-color: white;
+     height: 180px;
+   }
+   
+   #lista-carrito {
+     list-style: none;
+     padding: 0;
+   }
+   
+   #lista-carrito li {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 10px;
+   }
+   
+   #vaciar-carrito {
+     margin-right: 10px;
+   }
+ 
+   img{
+     width: auto;
+     height: 200px;
+   }
+   
+   h1{
+     text-align: center;
+   }
+ #titulo{
+  background-color: green;
+  border: 4px dotted black;
+ }
+
+ #cantidad-1 {
+  display: flex;
+   flex-direction: row;
+   align-items: center;
+   text-align: center;
+   background-color: aquamarine;
+   margin-left: auto;
+   bottom: 20%;
+   justify-content: center;
+   margin-top: 74%;
+   border: 1px solid black ;
+ }
+
+ #cantidad-2 {
+  display: flex;
+   flex-direction: row;
+   align-items: center;
+   text-align: center;
+   background-color: aquamarine;
+   margin-left: auto;
+   bottom: 20%;
+   justify-content: center;
+   margin-top: 56%;
+   border: 1px solid black ;
+ }
+
+ #cantidad-3 {
+  display: flex;
+   flex-direction: row;
+   align-items: center;
+   text-align: center;
+   background-color: aquamarine;
+   margin-left: auto;
+   bottom: 20%;
+   justify-content: center;
+   margin-top: 65%;
+   border: 1px solid black ;
+ }
+
+ #cantidad-4 {
+  display: flex;
+   flex-direction: row;
+   align-items: center;
+   text-align: center;
+   background-color: aquamarine;
+   margin-left: auto;
+   bottom: 20%;
+   justify-content: center;
+   margin-top: 47%;
+   border: 1px solid black ;
+ }
+
+ #cantidad-5 {
+  display: flex;
+   flex-direction: row;
+   align-items: center;
+   text-align: center;
+   background-color: aquamarine;
+   margin-left: auto;
+   bottom: 20%;
+   justify-content: center;
+   border: 1px solid black ;
+ }
