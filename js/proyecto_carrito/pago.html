@@ -32,11 +32,6 @@
             if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
             document.getElementById("errorNombre").innerHTML = "  Este campo es obligatorio de rellenar";
             }
-            else {
-                if (valor.length < 3 || /^\s+$/.test(valor)) {
-                    document.getElementById("errorNombre").innerHTML = "Debe de tener al menos tres caracteres";
-                }
-            }
         }
 
         function validacionCorreo() {
@@ -55,10 +50,34 @@
                 }
             }
         }
-
+        function validacionTarjeta() {
+            valor = document.getElementById("numeroTarjeta").value;
+            if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            document.getElementById("errorTarjeta").innerHTML = "  Este campo es obligatorio de rellenar";
+            }
+            else {
+                if (valor.length != 16 || /^\s+$/.test(valor)) {
+                    document.getElementById("errorTarjeta").innerHTML = "Debe de tener 16 dígitos";
+                }
+            }
+        
+        function validaacionPin() {
+            valor = document.getElementById("CVV").value;
+            if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            document.getElementById("errorCVV").innerHTML = "  Este campo es obligatorio de rellenar";
+            }
+            else {
+                if (valor.length != 3 || /^\s+$/.test(valor)) {
+                    document.getElementById("errorCVV").innerHTML = "Debe de tener 3 dígitos";
+                }
+            }
+        }
+        }
         function registrarse() {
             validacionNombre();
             validacionCorreo();
+            validacionTarjeta();
+            validacionCVV();
         }
 
     </script>
