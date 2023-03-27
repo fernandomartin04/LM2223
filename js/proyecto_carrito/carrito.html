@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Carrito de compras</title>
   <link rel="stylesheet" href="carrito.css">
+  <script src="Carrito.js">
+    
+  </script>
 </head>
 <body>
   <div id="titulo"><h1>COMPRAS FER Y NICO SL</h1></div>
@@ -16,9 +19,9 @@
       <p>Alfombrilla para tu ratón, de gran calidad y buen deslice.</p><br><br><br><br><br><br>
       <h4 id="precio1">Precio: 8€ </h4>
     <div class="cantidad">
-      <button class="agregar" onclick="agregarProducto(1)">- </button>
-      <p id="id1"> 0 </p>
-      <button class="quitar" onclick="quitarProducto(1)">+ </button>
+      <button class="agregar" onclick="quitarProducto('0')">- </button>
+      <p id="producto1"> 0 </p>
+      <button class="quitar" onclick="agregarProducto('0')">+ </button>
     </div>
     </div>
     
@@ -28,20 +31,20 @@
       <p>Pantalla para tu PC de resolución 4K Full-HD con puertos tanto HDMI como VGA.</p><br><br><br><br>
       <h4 id="precio2">Precio: 120€ </h4>
     <div class="cantidad">
-      <button class="agregar" onclick="agregarProducto(2)">-</button>
-      <p id="id2"> 0 </p>
-      <button class="quitar" onclick="quitarProducto(2)">+</button>
+      <button class="agregar" onclick="quitarProducto('1')">-</button>
+      <p id="producto2"> 0 </p>
+      <button class="quitar" onclick="agregarProducto('1')">+</button>
     </div>
   </div>
     <div class="producto">
       <img src="Imagenes/RatonGaming.jpg" alt="Producto 3">
       <h3>Ratón Gamer</h3>
       <p>Ratón gaming perfecto para videojuegos, con lucecitas y todo y conexión vía USB.</p><br><br><br><br><br>
-      <h4 id="precio3">Precio: 35€ </h4>
+      <h4 id="precio3">Precio: 35.50€ </h4>
       <div class="cantidad">
-        <button class="agregar" onclick="agregarProducto(3)">-</button>
-        <p id="id3"> 0 </p>
-        <button class="quitar" onclick="quitarProducto(3)">+</button>
+        <button class="agregar" onclick="quitarProducto('2')">-</button>
+        <p id="producto3"> 0 </p>
+        <button class="quitar" onclick="agregarProducto('2')">+</button>
       </div>
     </div>
     
@@ -51,38 +54,35 @@
       <p>Este teclado también tiene conexión USB y muchas lucecitas para que quede guapo tu cuarto y te de un ataque epiléctico</p><br><br><br>
       <h4 id="precio4">Precio: 46€ </h4>
       <div class="cantidad">
-        <button class="agregar" onclick="agregarProducto(4)">-</button>
-        <p id="id4"> 0 </p>
-        <button class="quitar" onclick="quitarProducto(4)">+</button>
+        <button class="agregar" onclick="quitarProducto('3')">-</button>
+        <p id="producto4"> 0 </p>
+        <button class="quitar" onclick="agregarProducto('3')">+</button>
     </div>
   </div>
     <div class="producto">
         <img src="Imagenes/TorreGamingg.jpg" alt="Producto 5">
         <h3>Torre ordenador Gamer</h3>
         <p>Como no podía faltar en nuestra tienda también tiene muchas lucecitas, pero no sólo está guapa, sino que también tiene todo tipo de puertos necesarios y grandes  características para poder jugar lo mejor posible, sino ganas es tu culpa no del ordenador</p>
-        <h4 id="precio5">Precio: 800€ </h4>
+        <h4 id="precio5">Precio: 800.95€ </h4>
       <div class="cantidad">
-        <button class="agregar" onclick="agregarProducto(5)">-</button>
-        <p id="id5"> 0 </p>
-        <button class="quitar" onclick="quitarProducto(5)">+</button>
+        <button class="agregar" onclick="quitarProducto('4')">-</button>
+        <p id="producto5"> 0 </p>
+        <button class="quitar" onclick="agregarProducto('4')">+</button>
       </div>
     </div>
       
   </div>
   
-  <div id="carrito">
-    <h2 id="tituloCarrito">Carrito de compras</h2>
-    <ul id="lista_carrito">
-      <li>Alfombrilla: x <span></span></li>
-      <li>Monitor: x <span></span></li>
-      <li>Ratón: x <span></span></li>
-      <li>Teclado: x <span></span></li>
-      <li>Torre: x <span></span></li>
-    </ul>
-    <button id="vaciar-carrito" onclick="vaciarCarrito()">Vaciar carrito</button><br>
-    <button id="comprar" onclick="window.location.href='compra.html'">Comprar</button>
+  <div id="resultado">
+    <h2>Carrito de compras</h2>
+    <ul id="lista-carrito"></ul>
+    <div id="preciototal"></div>
+    <button id="vaciar-carrito" onclick="vaciarCarrito()">Vaciar carrito</button>
+    <button id="comprar" onclick="window.location.href='pago.html'">Comprar</button>
   </div>
   
-  <script src="carrito.js"></script>
+  <script>
+    iniciar();
+  </script>
 </body>
 </html>
