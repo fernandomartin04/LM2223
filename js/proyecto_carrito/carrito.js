@@ -1,10 +1,9 @@
 let datos = [
-
-    {id:0, 'titulo':'monitor', 'precio':'129.99', uds:0},
-    {id:1, 'titulo': 'teclado', 'precio':'39.99', uds:0},
-    {id:2, 'titulo': 'ratón', 'precio':'22.99', uds:0},
-    {id:3, 'titulo': 'gráfica', 'precio':'1449.99', uds:0},
-    {id:4, 'titulo': 'torre', 'precio':'1449.99', uds:0},
+    {'Identificador':'0', 'NombreProducto':'Alfombrilla', 'Valor':'8', 'Unidades':'0'},
+    {'Identificador':'1', 'NombreProducto': 'Pantalla', 'Valor':'120', 'Unidades':'0'},
+    {'Identificador':'2', 'NombreProducto': 'Raton', 'Valor':'35.50', 'Unidades':'0'},
+    {'Identificador':'3', 'NombreProducto': 'Teclado', 'Valor':'46', 'Unidades':'0'},
+    {'Identificador':'4', 'NombreProducto': 'Torre', 'Valor':'800.95', 'Unidades':'0'},
    ];
        
        let compraAnterior=null; 
@@ -15,22 +14,23 @@ let datos = [
        if (compraAnterior!=null){
             compraAnterior = JSON.parse(compraAnterior);
             datos = compraAnterior;
-        refrescar();
+        reiniciardatolista();
        
         }
-       
        }
-       
+       function vaciarCarrito(){
+         elementosLista.innerHTML="";
+         
+       }
+   
        function agregarProducto(producto) {
-       
-       // En producto levamos el identificati a policia a m let objeto carro[producto];
        let objeto = datos[producto];
-       objeto['uds'] += 1; // Ando du
+       objeto['Unidades'] += 1; 
        datos[producto] = objeto;
-       
-     document.getElementById("id"+producto).value = objeto ['uds'];
-     localStorage.setItem("datos", JSON.stringify(datos));
-     refrescar();}
+       document.getElementById("Identificador"+producto).value = objeto ['Unidades'];
+       localStorage.setItem("datos", JSON.stringify(datos));
+       reiniciardatolista();
+     }
      
    
    
@@ -38,49 +38,40 @@ let datos = [
        
        function quitarProducto (producto) {
        
-       // En producto llevamos el identificador del producto a guardar en el carrato
-       
        let objeto = datos[producto];
        
-       let numuds = objeto['uds'];
+       let cantidades = objeto['Unidades'];
        
-       if (numuds>=1){
-       
+       if (cantidades>=1){
        datos[producto] = objeto;
+       objeto['Unidades'] -= 1; 
+       localStorage.setItem("datos", JSON.stringify(datos)); 
+       document.getElementById("Identificador"+producto).value = objeto ['Unidades'];
        
-       objeto['uds'] = 1; // Quito unidad localStorage.setItem("carro", JSON.stringify(carro)); 1
-       
-       document.getElementById("id"+producto).value = objeto ['uds'];
-       
-       refrescar();
+       reiniciardatolista();
        }
    }
    
-   function refrescar(){ 
-   
-   let listaCarrito = document.getElementById("resultado");
-   
+   function reiniciardatolista(){ 
+   let elementosLista = document.getElementById("lista-carrito");
    let total=0;
-   
-   listaCarrito.innerHTML="";
-   
+   elementosLista.innerHTML="";
    for (var i=0;i<datos.length;i++)
-   
    {
    
-   let producto = datos[i];
-    if (producto ['uds']>0){
    
-       let nodo = document.createElement("li");
-       let texto = document.createTextNode("Producto: " + datos ['titulo']+
-       document.getElementById("id"+i).value , producto['uds']); 
-       nodo.appendChild(texto);
-       listaCarrito.appendChild(nodo);
-    total = total + producto['uds']* producto['precio'];
+     let producto = datos[i];
+    if (producto ['Unidades']>0){
+      
+       let datolista = document.createElement("li");
+       let informacionlista = document.createTextNode(producto['NombreProducto'] + document.getElementById("Identificador"+i).value , producto['Unidades'] );
+       elementosLista.appendChild(datolista);
+    precio = precio + producto['Unidades']* producto['Valor'];
    
     }
    }
    
    
-   document.getElementById("lista-carrito").innerHTML = "Total:"+ total.toFixed(2) + "€";
+   document.getElementById("preciototal").innerHTML = "Total:"+ precio.toFixed(2) + "€";
    }
+  
