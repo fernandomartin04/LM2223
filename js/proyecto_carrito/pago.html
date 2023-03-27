@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago de la compra</title>
+    <link rel="stylesheet" href="pago.css">
+</head>
+<body>
+    <div id="contenedor">
+        <div id="interior">
+            <label class="textos" for="nombre">Titular de la tarjeta: </label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre"/><label id="errorNombre"></label><br><br>
+
+            <label for="correo">Correo electrónico: </label>
+            <input type="text" name="correo" id="correo" placeholder="Correo"/><label id="errorCorreo"></label><br><br>
+
+            <label for="tarjeta">Número de tarjeta: </label>
+            <input type="text" id="numeroTarjeta" placeholder="XXXX XXXX XXXX XXXX"><label id="errorTarjeta"></label><br><br>
+
+            <label for="pin">CVV:</label>
+            <input type="text" id="CVV" placeholder="XXX"><label id="errorCVV"></label><br><br>
+
+            <button onclick="registrarse()">Pagar</button>
+        </div>
+    </div>
+    <script>
+
+        function validacionNombre() {
+            valor = document.getElementById("nombre").value;
+            if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            document.getElementById("errorNombre").innerHTML = "  Este campo es obligatorio de rellenar";
+            }
+            else {
+                if (valor.length < 3 || /^\s+$/.test(valor)) {
+                    document.getElementById("errorNombre").innerHTML = "Debe de tener al menos tres caracteres";
+                }
+            }
+        }
+
+        function validacionCorreo() {
+            valor = document.getElementById("correo").value;
+            if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
+            document.getElementById("errorCorreo").innerHTML = "  Este campo es obligatorio de rellenar";
+            }
+            else {
+                var correoValido = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+                if ( correoValido.test(valor) ) {
+                    return true;
+                }
+                else {
+                    document.getElementById("errorCorreo").innerHTML = "El mail no es correcto";
+                    return false;
+                }
+            }
+        }
+
+        function registrarse() {
+            validacionNombre();
+            validacionCorreo();
+        }
+
+    </script>
+</body>
+</html>

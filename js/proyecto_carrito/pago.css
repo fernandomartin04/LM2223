@@ -1,0 +1,53 @@
+#errorNombre{
+    color: red;
+}
+#errorCorreo{
+    color: red;
+}
+#errorTarjeta{
+    color: red;
+}
+#errorCVV{
+    color: red;
+}
+
+#contenedor{
+    display: flex;
+    border: solid 1px;
+    width: 25%;
+    height: 400px;
+    margin-top: 13%;
+    margin-left: 37%;
+    justify-content: space-around;
+    background-image: radial-gradient(circle at 83.04% 2.81%, #ffff7d 0, #eaff7c 8.33%, #d3ff7d 16.67%, #b9ff80 25%, #9cff85 33.33%, #79fd8b 41.67%, #46f992 50%, #00f59b 58.33%, #00f0a7 66.67%, #00ecb5 75%, #00e8c5 83.33%, #00e5d5 91.67%, #00e1e6 100%);
+}
+#interior{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: large;
+}
+input{
+    height: 20px;
+    background: transparent;
+    border: 1px solid;
+}
+#CVV{
+    margin-left: 100px;
+}
+#numeroTarjeta{
+    margin-left: 8px;
+}
+#correo{
+    margin-left: 1px;
+}
+button{
+    color: #0099CC;
+    background: transparent;
+    border: 2px solid #0099CC;
+    border-radius: 6px;
+    height: 30px;
+    width: 325px;
+}
+body {
+    background-image: url(Imagenes/FU8l.gif);
+}
