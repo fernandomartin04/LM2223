@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1 Jquery</title>
+    <title>Ejercicio 3 Jquery</title>
     <script src="jquery-3.6.4.js"></script>
     <script>
         //Esto sirve para que jquery espere a que se cargue todo el documento
         
         $(document).ready(function(){
 
-            $("#ocultar").click(function(){
-                $(".impar").hide();
+            $("#agrandar").click(function(){
+                $("p:odd").css("font-size", "+=2px");
+                $("p:odd").css("color", "red");
             });
-
-            $("#mostrar").click(function(){
-                $(".impar").show();
+            $("#disminuir").click(function(){
+                $("p:odd").css("font-size", "-=2px");
+                $("p:odd").css("color", "yellow");
             });
-
+        
         });
     </script>
 </head>
@@ -29,7 +30,8 @@
     <p class="impar">parrafo 3</p>
     <p class="par">parrafo 4</p>
     <p class="impar">parrafo 5</p>
-    <button id="ocultar">Pulsa para ocultar párrafos</button>
-    <button id="mostrar">Mostrar</button>
+    <button id="agrandar">Pulsa para agrandar</button>
+    <button id="disminuir">Pulsa para disminuir</button>
+
 </body>
 </html>
