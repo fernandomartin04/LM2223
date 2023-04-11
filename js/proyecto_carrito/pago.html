@@ -26,7 +26,7 @@
         </div>
     </div>
     <script>
-
+   
         function validacionNombre() {
             valor = document.getElementById("nombre").value;
             if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
@@ -55,24 +55,27 @@
             if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
             document.getElementById("errorTarjeta").innerHTML = "  Este campo es obligatorio de rellenar";
             }
-            else {
-                if (valor.length != 16 || /^\s+$/.test(valor)) {
+            else if (valor.length != 16 || /^\s+$/.test(valor)) {
                     document.getElementById("errorTarjeta").innerHTML = "Debe de tener 16 dígitos";
                 }
+            else if (isNaN(valor)) {
+                document.getElementById("errorTarjeta").innerHTML = "El valor debe de ser numérico";
             }
-        
-        function validaacionPin() {
+        }
+        function validacionCVV() {
             valor = document.getElementById("CVV").value;
             if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) { 
             document.getElementById("errorCVV").innerHTML = "  Este campo es obligatorio de rellenar";
             }
-            else {
-                if (valor.length != 3 || /^\s+$/.test(valor)) {
-                    document.getElementById("errorCVV").innerHTML = "Debe de tener 3 dígitos";
+            else if (valor.length != 3 || /^\s+$/.test(valor)) {
+                document.getElementById("errorCVV").innerHTML = "Debe de tener 3 dígitos";
                 }
+            else if (isNaN(valor)) {
+                document.getElementById("errorCVV").innerHTML = "El valor debe de ser numérico";
             }
+
         }
-        }
+        
         function registrarse() {
             validacionNombre();
             validacionCorreo();
