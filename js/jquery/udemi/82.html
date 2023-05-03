@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 82</title>
+    <script src="../jquery-3.6.4.js"></script>
+    <style>
+        #circulo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: green;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="circulo"></div>
+    <p>Esto es un texto cualquiera</p>
+    <script>
+        $(document).ready(function(){
+
+        $("#circulo").click(function(){
+            /*alert($("p").html());    Asi el alert nos mostraria el contenido del 'p'*/
+            $("p").html("Este texto ha cambiado"); //Esto cambia el html de 'p'
+            
+        });
+        
+    });
+
+    </script>
+</body>
+</html>
