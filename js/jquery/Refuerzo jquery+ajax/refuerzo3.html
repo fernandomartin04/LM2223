@@ -7,25 +7,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
   <body>
-    <h1>Consumiento datos de la API de los gifs</h1>
-    <input type="text" id="titulo" placeholder="Introduce el nombre">
+    <h1>Consumiento datos de la API de openweathermap</h1>
+    <input type="text" id="titulo" placeholder="Introduce titulo de la pelicula">
     <button id="buscar">Buscar</button>
     <div id="resultado">
+    </div>
     <script>
         /* Completar el código jQuery aquí */
-
         $(document).ready(function () {
     $('#buscar').click(function () {
         let titulo = $('#titulo').val();
-        let apiKey = '00RSvza7XYdNVn2H4DUPJyzteN3bFRT4'; // Reemplaza esto con tu propia API key
+        let apiKey = 'cc46c20b'; // Reemplaza esto con tu propia API key
 
         // Llamada AJAX utilizando jQuery
         $.ajax({
-            url: 'https://api.giphy.com/v1/gifs/search?'+apiKey+'&q='+titulo,
+            url: 'http://www.omdbapi.com/?apikey='+apiKey+'&t='+titulo,
             success: function (data) {
                 if (data.Response === "True") {
                     console.log(data);
-                    $('#resultado').html(`<img src`);
+                    $('#resultado').html(`<h2>${data.Title} (${data.Year})</h2><img src="${data.Poster}" alt="${data.Title}"><p>Director: ${data.Director}</p><p>Actores: ${data.Actors}</p><p>Resumen: ${data.Plot}</p>`);
                 } else {
                     $('#resultado').html('<p>No se encontró la película.</p>');
                 }
