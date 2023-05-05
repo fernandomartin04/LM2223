@@ -24,11 +24,13 @@
 </head>
 <body>
     <div id="circulo"></div>
+    <div class="cuadrado"></div>
+    <div class="cuadrado"></div>
     <script>
         $(document).ready(function(){
 
         $("div").click(function(){
-            alert($("body").css("width"));
+            $(this).css("display","none");
         });
         
     });
