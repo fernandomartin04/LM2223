@@ -21,13 +21,14 @@
 
         // Llamada AJAX utilizando jQuery
         $.ajax({
-            url: 'https://api.giphy.com/v1/gifs/search?'+apiKey+'&q='+titulo,
+            url: 'https://api.giphy.com/v1/gifs/search?api_key='+apiKey+'&q='+titulo,
             success: function (data) {
                 if (data.Response === "True") {
                     console.log(data);
                     $('#resultado').html(`<img src`);
-                } else {
-                    $('#resultado').html('<p>No se encontró la película.</p>');
+                } 
+                else {
+                    $('#resultado').html('<p>No existe gif.</p>');
                 }
             },
             error: function () {
