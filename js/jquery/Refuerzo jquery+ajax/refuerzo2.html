@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fotos Aleatorias de Unsplash</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <button id="mostrar">Mostrar foto aleatoria</button>
+    <div id="resultado"></div>
+    <script>
+        $(document).ready(function () {
+    $('#mostrar').click(function () {
+        let apiKey = 'rSak_2sc-cy8X82RtjiVW7r4QOQ4SnjZMMIRQUkXn2g'; // Reemplaza esto con tu propia API key
+
+        // Llamada AJAX utilizando jQuery
+        $.ajax({
+            url: `https://api.unsplash.com/photos/random?client_id=${apiKey}`,
+            success: function (data) {
+                $('#resultado').html(`
+                <img src="${data.urls.small}" alt="${data.alt_description}">
+                <p>Autor: ${data.user.name}</p>
+                <p>Enlace a Unsplash: <a href="${data.links.html}" target="_blank">Ver en Unsplash</a></p>
+                `);
+                },
+                error: function () {
+                $('#resultado').html('<p>No se pudo obtener la foto aleatoria.</p>');
+                },
+                });
+                });
+                });
+    </script>
+</body>
+</html>
