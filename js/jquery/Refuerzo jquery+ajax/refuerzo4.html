@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Refuerzo 4 Github</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <input type="text" id="nombre" placeholder="Introduce el nombre de un usuario">
+    <button id="buscar">Buscar</button>
+    <div id="resultado"></div>
+    <script>
+        $(document).ready(function () {
+    $('#buscar').click(function () {
+        let nombre = $('#nombre').val();
+        
+        $.ajax({
+            url: `https://api.github.com/users/` + nombre,
+            success: function (data) {
+                $('#resultado').html(`
+                <h2>${data.login}</h2>
+                <p>Seguidores: ${data.followers}</p>
+                <p>Seguidos: ${data.following}</p>
+                <p>Fecha de creación: ${data.created_at}</p>
+                <p>Última aportación: ${data.updated_at}</p>
+                `);
+            },
+            error: function () {
+                $('#resultado').html('<p>No se pudo obtener la información del clima.</p>');
+            },
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
