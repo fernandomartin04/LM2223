@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Refuerzo 5 Github, libros</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <input type="text" id="titulo" placeholder="Introduce el nombre de un libro">
+    <button id="buscar">Buscar</button>
+    <div id="resultado"></div>
+    <script>
+        $(document).ready(function () {
+    $('#buscar').click(function () {
+        let titulo = $('#titulo').val();
+        let apikey = 'f0db1b412bbad09dbf90df463e5979fd'
+        
+        $.ajax({
+            url: 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key='+apikey+'&text='+titulo+'&format=json&nojsoncallback=1',
+            success: function (data) {
+                $('#resultado').html(`
+                <h2>${data.login}</h2>
+                <p>Seguidores: ${data.followers}</p>
+                <p>Seguidos: ${data.following}</p>
+                <p>Fecha de creación: ${data.created_at}</p>
+                <p>Última aportación: ${data.updated_at}</p>
+                `);
+            },
+            error: function () {
+                $('#resultado').html('<p>No se pudo obtener la información del clima.</p>');
+            },
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
