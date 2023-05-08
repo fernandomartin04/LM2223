@@ -3,12 +3,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Refuerzo 5 Github, libros</title>
+    <title>Refuerzo 6, fotos</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
-    <input type="text" id="titulo" placeholder="Introduce el nombre de un libro">
+    <input type="text" id="titulo" placeholder="Introduce nombre para una foto">
     <button id="buscar">Buscar</button>
     <div id="resultado"></div>
     <script>
@@ -22,10 +22,7 @@
             success: function (data) {
                 $('#resultado').html(`
                 <h2>${data.login}</h2>
-                <p>Seguidores: ${data.followers}</p>
-                <p>Seguidos: ${data.following}</p>
-                <p>Fecha de creación: ${data.created_at}</p>
-                <p>Última aportación: ${data.updated_at}</p>
+                <img src= '${data.phots.photo.farm+server+id+secret}'
                 `);
             },
             error: function () {
