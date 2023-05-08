@@ -15,25 +15,18 @@
         /* Completar el código jQuery aquí */
 
         $(document).ready(function () {
-    $('#buscar').click(function () {
+        $('#buscar').click(function () {
         let titulo = $('#titulo').val();
         let apiKey = '00RSvza7XYdNVn2H4DUPJyzteN3bFRT4'; // Reemplaza esto con tu propia API key
 
         // Llamada AJAX utilizando jQuery
         $.ajax({
             url: 'https://api.giphy.com/v1/gifs/search?api_key='+apiKey+'&q='+titulo,
-            success: function (data) {
-                if (data.Response === "True") {
-                    console.log(data);
-                    $('#resultado').html(`<img src`);
-                } 
-                else {
-                    $('#resultado').html('<p>No existe gif.</p>');
-                }
-            },
-            error: function () {
-                $('#resultado').html('<p>Error al buscar la película.</p>');
-            },
+            success: function(r) {
+            console.log(r);
+                $('#resultado').html("<h2>" +r.data[0].tittle+ "</h2><img src='"+ r.data[0].images.original.url+"'>");
+                
+            }
         });
     });
 });
