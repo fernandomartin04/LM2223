@@ -19,10 +19,10 @@
         
         $.ajax({
             url: 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key='+apikey+'&text='+titulo+'&format=json&nojsoncallback=1',
-            success: function (data) {
+            success: function (photo) {
                 $('#resultado').html(`
-                <h2>${data.login}</h2>
-                <img src= '${data.phots.photo.farm+server+id+secret}'
+                <h2>${photo.login}</h2>
+                <img src= '${"https://live.staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg"}'
                 `);
             },
             error: function () {
