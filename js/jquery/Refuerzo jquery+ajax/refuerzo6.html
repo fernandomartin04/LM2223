@@ -25,9 +25,6 @@
                 <img src= '${"https://live.staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg"}'
                 `);
             },
-            error: function () {
-                $('#resultado').html('<p>No se pudo obtener la información del clima.</p>');
-            },
         });
     });
 });
