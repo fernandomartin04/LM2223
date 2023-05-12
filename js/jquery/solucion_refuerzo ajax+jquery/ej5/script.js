@@ -10,6 +10,10 @@ $(document).ready(function () {
                 let libros = data.items;
                 let resultadoHTML = '';
 
+                 /*let longitud = libros.length;
+                 for (let i=0;i<longitud;i++) {
+                    
+                 }*/
                 if (libros) {
                     libros.forEach(function (libro) {  //Ese 'forEach' es como un bucle y el += para que se vay añadiendo todos los resultados en cada vuelta
                         resultadoHTML +=`     
