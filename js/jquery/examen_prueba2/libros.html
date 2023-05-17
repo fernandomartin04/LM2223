@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <title>Visualizador libros</title>
+    <!-- Aquí añadimos el código para poder trabajar con jQuery -->
+    <style>
+        body {
+            font-family: 'Alexandria', sans-serif;
+        }
+        h1{
+            font-size: xx-large;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap:wrap;
+            flex-direction: column;
+           
+        }
+        .formulario {
+            width: 80%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            background-color: rgb(133, 181, 197);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 10px 10px 10px #7c7e8b;
+            overflow:auto;
+        }
+        .formulario > * {
+            margin: 10px;
+            padding: 10px;
+        }
+        input, label {
+            font-size: 1.5em;
+        }
+        button {
+            background-color:#091661;
+            font-size: x-large;
+            height: 60px;
+            width: 25%;
+            border-radius: 20px;
+            color: white;
+            margin-left: 2%;
+            margin-top: 1%;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1>Gutendex API</h1>
+            <label for="codlibro">Código Libro:</label>
+            <input type="number" name="codLibro" id="codLibro" min="1">
+            <br>
+            <label for="botones">Acción:</label>
+            <button id="btn-libro">Obtener libro</button>
+            <button id="btn-todos">Ver todos</button>
+            <div id="resultados">
+                <!-- Aqui cargaremos los resultados-->
+            </div>
+            <a href="" target="_blank"></a>
+        </div>
+        
+    </div>
+    <script>
+        /* Aqui desarrollamos el código necesario */
+        $(document).ready(function () {
+        $('button').click(function () {
+        let idLibro = $('#codLibro').val();
+        // Llamada AJAX utilizando jQuery
+        $.ajax({
+            url: 'https://gutendex.com/books/'+idLibro,
+            success: function(r) {
+            console.log(r);
+            for(let i=0; i<idLibro.length; i++ ) {
+                $('#resultados').html("<h2>" +r.title+ "</h2><p>" +r.authors[i].name+ "</p><img src='"+'https://www.gutenberg.org/cache/epub/'+idLibro+'/pg'+idLibro+'.cover.medium.jpg'+"'><br><a target='_blank' href='"+'https://www.gutenberg.org/ebooks/'+idLibro+'.txt.utf-8'+"'>"+'Pincha aquí para descargar'+"</a><br><p>" +'Numero de descargas: '+r.download_count+ "</p>");
+            }
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>
