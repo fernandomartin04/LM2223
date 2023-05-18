@@ -75,7 +75,12 @@
           numberOfMonths: 1
         })
         .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
+            var selectedDate = getDate(this);
+                    if (selectedDate) {
+                        var minDate = new Date(selectedDate);
+                        minDate.setDate(minDate.getDate() + 1);
+                        to.datepicker("option", "minDate", minDate);
+                    }
         }),
       to = $( "#to" ).datepicker({
         defaultDate: "+2w",
@@ -84,7 +89,7 @@
         numberOfMonths: 1
       })
       .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
+        from.datepicker( "option", "minDate", "maxDate", getDate( this ) );
       });
 
     function getDate( element ) {
