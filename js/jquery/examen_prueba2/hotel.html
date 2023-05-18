@@ -7,6 +7,9 @@
     <title>Reserva de habitaciones</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://code.jquery.com/resources/demos/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
     <!-- Es posible que aquí falte algo -->
     <style>
         body {
@@ -51,17 +54,54 @@
             <label for="doble">Habitación doble (45€)</label><br>
             <input min="0" type="number" name="triple" id="num_triples" value="0">
             <label for="triple">Habitación triple (80€)</label><br>
-            <input class="datepicker" type="text" name="entrada" id="f_entrada">
-            <label for="entrada">Entrada</label><br>
-            <input class="datepicker" type="text" name="salida" id="f_salida">
-            <label for="salida">Salida</label><br>
+            <input class="datepicker" type="text" name="from" id="from">
+            <label for="from">Entrada</label><br>
+            <input class="datepicker" type="text" name="to" id="to">
+            <label for="to">Salida</label><br>
             <button id="calculo">Cálculo</button>
             <p id="totalDias">Total días: </p>
             <p id="totalPrecio">Precio: </p>
         </form>
      </div>
     <script>
-        /* Aqui tenemos que desarrollar nuestro código */
+        /* Primero pondre el datepicker con un rango */
+        $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#from" )
+        .datepicker({
+          defaultDate: "+1w",
+          minDate: "+1D",
+          maxDate: "+364D",
+          numberOfMonths: 1
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#to" ).datepicker({
+        defaultDate: "+2w",
+        minDate: "2D",
+        maxDate: "+365D",
+        numberOfMonths: 1
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+
+ 
+      return date;
+    }
+
+    
+  } );
+
     </script>
 </body>
 </html>
