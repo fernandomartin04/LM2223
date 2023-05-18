@@ -66,7 +66,7 @@
     <script>
         /* Primero pondre el datepicker con un rango */
         $( function() {
-    var dateFormat = "mm/dd/yy",
+    var dateFormat = "dd/mm/yy",
       from = $( "#from" )
         .datepicker({
           defaultDate: "+1w",
@@ -75,7 +75,7 @@
           numberOfMonths: 1
         })
         .on( "change", function() {
-            var selectedDate = getDate(this);
+          var selectedDate = getDate(this);
                     if (selectedDate) {
                         var minDate = new Date(selectedDate);
                         minDate.setDate(minDate.getDate() + 1);
@@ -83,7 +83,7 @@
                     }
         }),
       to = $( "#to" ).datepicker({
-        defaultDate: "+2w",
+        defaultDate: "+1w",
         minDate: "2D",
         maxDate: "+365D",
         numberOfMonths: 1
@@ -106,6 +106,24 @@
 
     
   } );
+  $.datepicker.regional['es'] = {
+    closeText: 'Cerrar',
+    prevText: '<Ant',
+    nextText: 'Sig>',
+    currentText: 'Hoy',
+    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+    dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+    weekHeader: 'Sm',
+    dateFormat: 'dd/mm/yy',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ''
+  };
+  $.datepicker.setDefaults($.datepicker.regional['es']);
 
     </script>
 </body>
