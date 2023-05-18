@@ -83,7 +83,7 @@
             url: 'https://gutendex.com/books/'+idLibro,
             success: function(r) {
             console.log(r);
-            for(let i=0; i<idLibro.length; i++ ) {
+            for(let i=0; i<r.authors.length; i++ ) {
                 $('#resultados').html("<h2>" +r.title+ "</h2><p>" +r.authors[i].name+ "</p><img src='"+'https://www.gutenberg.org/cache/epub/'+idLibro+'/pg'+idLibro+'.cover.medium.jpg'+"'><br><a target='_blank' href='"+'https://www.gutenberg.org/ebooks/'+idLibro+'.txt.utf-8'+"'>"+'Pincha aquí para descargar'+"</a><br><p>" +'Numero de descargas: '+r.download_count+ "</p>");
             }
             }
