@@ -54,10 +54,16 @@
             <label for="doble">Habitación doble (45€)</label><br>
             <input min="0" type="number" name="triple" id="num_triples" value="0">
             <label for="triple">Habitación triple (80€)</label><br>
+
+
             <input class="datepicker" type="text" name="from" id="from">
+
             <label for="from">Entrada</label><br>
+
             <input class="datepicker" type="text" name="to" id="to">
+
             <label for="to">Salida</label><br>
+            
             <button id="calculo">Cálculo</button>
             <p id="totalDias">Total días: </p>
             <p id="totalPrecio">Precio: </p>
@@ -125,9 +131,11 @@
   };
   $.datepicker.setDefaults($.datepicker.regional['es']);
   $("button").click(function() {
-    let individual = $("#num_individuales").val;
-    let doble = $("#num_dobles").val;
-    let triples = $("#num_triples").val;
+    let individual = $("#num_individuales").val*("");
+    let doble = $("#num_dobles").val*("");
+    let triples = $("#num_triples").val*("")
+    ;
+
   });
   
 

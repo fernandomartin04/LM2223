@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Menu - Icons</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://code.jquery.com/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <style>
+  .ui-menu { width: 150px; }
+  </style>
+</head>
+<body>
+<h2>Ficheros del sistema</h2>
+<div id="dialog-confirm" title="Vaciar papelera">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Todos los elementos de la siguiente lista serán borrados, ¿estás seguro?</p>
+  </div>
+<ul id="">
+    <li>
+        <div>Fichero1</div>
+    </li>
+    <li>
+        <div>Fichero2</div>
+    </li>
+    <li>
+        <div>Fichero3</div>
+    </li>
+    <li>
+        <div>Fichero4</div>
+    </li>
+    <li>
+        <div>Fichero5</div>
+    </li>
+</ul>
+<script>
+    $( function() {
+      $( "#dialog-confirm" ).dialog({
+        resizable: false,
+        height: "auto",
+        width: 700,
+        modal: true,
+        buttons: {
+          "Borrar todos los elementos": function() {
+            $( this ).dialog( "close" );
+            $("ul").css("display","none");
+          },
+          Cancelar: function() {
+            $( this ).dialog( "close" );
+          }
+        }
+      });
+    } );
+    </script>
+ 
+</body>
+</html>
