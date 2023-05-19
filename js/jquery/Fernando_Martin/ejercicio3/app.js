@@ -107,7 +107,7 @@
     let qr = nombre + apellido + email + dni + ida + vuelta + localizador;
     
       $(".btn btn-primary").click(function(){
-        event.preventDefault();
+        $event.preventDefault();
         $("#resumen").html("<p>" +salida+ "</p>");
         $.ajax({
                 url: 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+qr,
